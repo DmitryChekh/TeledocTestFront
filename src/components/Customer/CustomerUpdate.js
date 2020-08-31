@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { Formik, useFormikContext } from 'formik';
+import { Formik} from 'formik';
 import * as yup from 'yup'
-import { useParams, Link } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { ListFounders } from './ListFounders'
 import { updateCustomer } from '../../redux/actions'
 import { Alert } from 'react-bootstrap';
@@ -82,8 +82,9 @@ export function CustomerUpdate() {
 
                 onSubmit={(data, { setSubmitting }) => {
                     console.log(data)
+                    setSubmitting(true)
                     dispatch(updateCustomer(data.customerId, data.itn, data.name, data.founders))
-
+                    setSubmitting(false)
                 }}
             >
 
@@ -137,7 +138,6 @@ export function CustomerUpdate() {
 
                         <button disabled={isSubmitting} type="submit" className="btn btn-success mt-2" >Изменить</button>
 
-                        <pre>{JSON.stringify(values, null, 2)}</pre>
                     </Form>
                 )}
             </Formik>

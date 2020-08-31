@@ -119,7 +119,6 @@ export function CustomerForm() {
                         </Form.Control>}
 
                     <Button disabled={isSubmitting} type="submit" className="btn btn-success mt-4" >Добавить клиента</Button>
-                    <pre>{JSON.stringify(values, null, 2)}</pre>
                 </Form>
             )}
         </Formik>

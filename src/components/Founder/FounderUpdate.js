@@ -1,10 +1,9 @@
 import React from 'react'
-import { deleteFounder, updateFounder } from '../../redux/actions'
-import { connect, useSelector, useDispatch } from 'react-redux'
+import { updateFounder } from '../../redux/actions'
+import { useSelector, useDispatch } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+
 import { Formik } from 'formik';
 import * as yup from 'yup'
 import { useParams } from 'react-router-dom'
@@ -94,7 +93,6 @@ export function FounderUpdate() {
                         </Form.Control.Feedback>
                     <button disabled={isSubmitting} type="submit" className="btn btn-success mt-2" >Изменить</button>
 
-                    {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
                 </Form>
             )}
         </Formik>

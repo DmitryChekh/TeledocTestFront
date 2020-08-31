@@ -108,7 +108,6 @@ export function FounderForm() {
                     </Row>
                     <button disabled={isSubmitting} type="submit" className="btn btn-success mt-2" >Добавить учредителя</button>
 
-                    {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
                 </Form>
             )}
         </Formik>
